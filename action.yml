@@ -1,0 +1,15 @@
+# action.yml
+name: "sfdx command"
+description: "run command in sfdc container"
+inputs:
+  command:
+    description: "command"
+    required: true
+outputs:
+  result:
+    description: "result of the command"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.command }}
